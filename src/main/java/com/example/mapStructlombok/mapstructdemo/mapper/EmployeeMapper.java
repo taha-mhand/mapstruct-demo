@@ -6,7 +6,6 @@ import com.example.mapStructlombok.mapstructdemo.entity.Department;
 import com.example.mapStructlombok.mapstructdemo.entity.Employee;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
-import org.mapstruct.Mappings;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -30,13 +29,11 @@ public interface EmployeeMapper {
         return String.valueOf(period.getYears());
     }
 
-    @Mappings({
-            @Mapping(target="id", source="dto.employeeId"),
-            @Mapping(target="firstName", source="dto.employeeFirstName"),
-            @Mapping(target="lastName", source="dto.employeeLastName"),
-            @Mapping(target="date", source="dto.startDate",
+    @Mapping(target="id", source="dto.employeeId")
+    @Mapping(target="firstName", source="dto.employeeFirstName")
+    @Mapping(target="lastName", source="dto.employeeLastName")
+    @Mapping(target="date", source="dto.startDate",
                     dateFormat="dd-MM-yyyy HH:mm:ss")
-    })
     Employee employeeDtoToEmployee(EmployeeDto dto);
 
 

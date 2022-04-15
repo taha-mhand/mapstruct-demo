@@ -13,5 +13,6 @@ import org.mapstruct.Mapper;
 @DecoratedWith(InvoiceMapperDecorator.class)
 public interface InvoiceMapper {
 
+    InvoiceDto invoiceToInvoiceDto(Invoice invoice);
     InvoiceDto invoiceToInvoiceDtoWithLink(Invoice invoice);
 }
