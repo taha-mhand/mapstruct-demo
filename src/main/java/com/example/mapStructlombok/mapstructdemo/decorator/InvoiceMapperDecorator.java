@@ -17,7 +17,7 @@ public abstract class InvoiceMapperDecorator implements InvoiceMapper {
 
 
     @Override
-    public InvoiceDto invoiceToInvoiceDtoWithLink(Invoice invoice) {
+    public InvoiceDto invoiceToInvoiceDto(Invoice invoice) {
         InvoiceDto dto = delegate.invoiceToInvoiceDto(invoice);
 
         dto.setDownloadLink(invoice.getId() + " downloadInvoice");

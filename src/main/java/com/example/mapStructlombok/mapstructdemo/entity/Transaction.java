@@ -13,6 +13,7 @@ import java.util.UUID;
 public class Transaction {
 
     private Long id;
+    @Builder.Default
     private String uuid = UUID.randomUUID().toString();
     private BigDecimal total;
 }

@@ -6,11 +6,12 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Address {
     private int id;
     private String street;
     private String postalCode;
     private String county;
     private String city;
-    private int number;
+    private String number;
 }
